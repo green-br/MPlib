@@ -19,7 +19,7 @@ using PinocchioModel = PinocchioModelTpl<S>;
 
 void build_pypinocchio_model(py::module &m) {
   auto PyPinocchioModel = py::class_<PinocchioModel, std::shared_ptr<PinocchioModel>>(
-      m, "PinocchioModel", DOC(mplib, kinematics, pinocchio, PinocchioModelTpl));
+      m, "PinocchioModel", ::DOC(mplib, kinematics, pinocchio, PinocchioModelTpl));
 
   PyPinocchioModel
       .def(py::init<const std::string &, const Vector3<S> &, bool>(),
